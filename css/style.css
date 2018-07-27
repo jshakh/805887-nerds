@@ -352,7 +352,6 @@ fieldset {
 }
 
 .about-us {
-    width: 360px;
     min-height: 130px;
 }
 
@@ -697,7 +696,7 @@ input[type="checkbox"]:disabled + label::before {
 .current a {
     opacity: 1;}
 
-.catalog-item::before {
+.catalogue-item::before {
   content: "";
   background-image: url("../img/browser.svg"); 
   display: block;
@@ -707,20 +706,20 @@ input[type="checkbox"]:disabled + label::before {
   opacity: 0.12;    
  }
 
-.catalog-item:hover::before {
+.catalogue-item:hover::before {
   opacity: 1;    
  }
 
-.catalog-item:hover .catalog-item-card {
+.catalogue-item:hover .catalog-item-card {
   opacity: 1;
 }
 
-.catalog-item:hover {
+.catalogue-item:hover {
   border: 1px solid rgba(77, 77, 77, 0.1);
   box-shadow: 0px 6px 15px 0px rgba(0, 1, 1, 0.25);
 }
 
-.catalog-item-card {
+.catalogue-item-card {
   display: block;
   box-sizing: border-box;
   background: #eeeeee;
@@ -735,7 +734,7 @@ input[type="checkbox"]:disabled + label::before {
   margin-bottom: -257px;
 }
 
-.catalog-item-card:hover {
+.catalogue-item-card:hover {
   opacity: 1;
 }
 
@@ -744,7 +743,7 @@ input[type="checkbox"]:disabled + label::before {
 }
 
 
-.catalog-item-title {
+.catalogue-item-title {
   display: block;
   box-sizing: border-box;
   font-size: 18px;
@@ -754,10 +753,10 @@ input[type="checkbox"]:disabled + label::before {
   padding-top: 30px;
 }
 
-.card:focus ~ .catalog-item-card {
+.card:focus ~ .catalogue-item-card {
   opacity: 1;
 }
-.catalog-item-card p {
+.catalogue-item-card p {
   box-sizing: border-box;
   line-height: 18px;  
   color: #666666;
@@ -819,7 +818,7 @@ input[type="checkbox"]:disabled + label::before {
   display: block;
   box-sizing: border-box;
   width: 320px;
-  height: 320px;
+  min-height: 320px;
   position: absolute;
   padding-left: 50px;
   padding-top: 54px;
@@ -866,13 +865,91 @@ input[type="checkbox"]:disabled + label::before {
   margin-top: 40px;
 }
 
+
+
+.modal {
+  position: fixed;
+  
+  color: #000000;
+
+  background-color: #f8f3f0;
+  background-image: url(" ");
+  background-position: 0 0;
+  background-repeat: repeat;
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
+}
+
+.modal-login {
+  top: 120px;
+  left: 50%;
+
+  width: 300px;
+  margin-left: -230px;
+  padding: 50px 80px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0;
+  right: -34px;
+  
+  width: 22px;
+  height: 22px;
+
+  font-size: 0;
+
+  background-color: transparent;
+  border: 0;
+
+  cursor: pointer;
+}
+
+.modal-close::before,
+.modal-close::after {
+  content: "";
+
+  position: absolute;
+  top: 10px;
+  left: 2px;
+
+  width: 19px;
+  height: 3px;
+
+  background-color: #d0d0d0;
+}
+
+.modal-close::before {
+  transform: rotate(45deg);
+}
+
+.modal-close::after {
+  transform: rotate(-45deg);
+}
+
+.modal-login h2 {
+  margin: 0;
+  margin-bottom: 20px;
+
+  font-size: 30px;
+  line-height: 42px;
+}
+
+.modal-description {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+
+
+
+
 .modal {
   position: fixed;
   background-color: #ffffff;
   z-index: 105;
 }
 
-.modal-login {
+/* .modal-login {
   display: none;
   box-sizing: border-box;
   top: 50%; 
@@ -939,7 +1016,7 @@ input[type="checkbox"]:disabled + label::before {
   margin-top: 72px;
   margin-bottom: 0;
 }
-
+*/
 .modal label {
   font-size: 16px;
   font-weight: 700;
@@ -1022,7 +1099,7 @@ nput[type="text"] + label span {
 .footer-social {
   display: flex;
   flex-direction: row-reverse;
-  height: 220px; 
+  min-height: 220px; 
   justify-content: flex-end;
   align-items: center;
   margin-left: -12px;
@@ -1119,6 +1196,13 @@ nput[type="text"] + label span {
     
 }
 
+.wrapper-catalogue {
+  display: flex;
+  width: 100%;
+  margin-top: 60px;
+  align-items: flex-start;
+}
+
 .wrapper {
   display: flex;
   width: 300px;
@@ -1126,7 +1210,7 @@ nput[type="text"] + label span {
   align-items: flex-start;
 }
 
-.sorting-catalog-wrapper {
+.sorting-catalogue-wrapper {
   margin-left: 100px;
   min-width: 800px;
   align-items: center;
@@ -1153,7 +1237,7 @@ nput[type="text"] + label span {
   
 }
 
-.catalog-list {
+.catalogue-list {
   display: flex;
   min-width: 820px;
   padding-top: 50px;
@@ -1161,7 +1245,7 @@ nput[type="text"] + label span {
 }
 
 
-.catalog-item {
+.catalogue-item {
   display: block;
   box-sizing: border-box;
   position: relative;
@@ -1184,4 +1268,20 @@ nput[type="text"] + label span {
     height:416px;
     z-index:10;
     margin-top: 30px;
+}
+
+.triangle-up {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20 solid black;
+}
+
+.triangle-up {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 20 solid black;
 }
