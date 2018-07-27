@@ -245,26 +245,24 @@
 				</div>				
 			</section>
 		</footer>
-    <section class="modal modal-login">
-      <h2>Напишите нам</h2>
-      <form class="contact-form" action="https://echo.htmlacademy.ru" method="post">
-        <div class="user-info">
-          <p class="info"> 
-            <label class="modal" for="user-name">Ваше имя:</label><br>
-            <input class="input-user-name" id="user-name" type="text" name="name" placeholder="Имя Фамилия">
-          </p>
-          <p class="info">
-            <label class="modal" for="user-email">Ваш e-mail:</label><br>
-            <input class="input-user-email" id="user-email" type="email" name="email" placeholder="email@example.com">
-          </p>
-        </div>
-        <p>
-          <label class="modal" for="letter">Текст письма:</label><br>
-          <textarea class="input-user-letter" id="letter" rows="4" cols="85" placeholder="В свободной форме"></textarea>
+   <section class="modal modal-login visually-hidden">
+  <h2>Напишите нам</h2>
+  <form class="login-form" action="https://echo.htmlacademy.ru" method="post">
+    <p>
+      <label class="visually-hidden" for="user-name">Ваше имя:</label>
+      <input class="input-user-name" id="user-name" type="text" name="name" placeholder="Имя Фамилия">
+    </p>
+    <p>
+      <label class="visually-hidden" for="user-email">Ваш e-mail:</label>
+      <input class="input-user-email" id="user-email" type="email" name="email" placeholder="email@example.com">
+    </p>
+    <p>
+        <label class="visually-hidden" for="letter">Текст письма:</label><br>
+          <textarea class="input-user-letter" id="letter" rows="4" cols="35" placeholder="В свободной форме"></textarea>
         </p>
-        <button class="button button-modal" type="submit">Отправить</button>
+        <button class="btn button-modal" type="submit">Отправить</button>
       </form>
-      <button class="modal-close" type="button">Закрыть</button>
+      <button class="modal-close" type="btn">Закрыть</button>
     </section>
 		<script src="script.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;signed_in=true"></script>
