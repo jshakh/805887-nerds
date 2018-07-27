@@ -5,7 +5,7 @@
 		<title>Nerds - маленькая дизайн студия</title>	
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link href="css/normalize.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
+        <link href="css/style-2.css" rel="stylesheet">
   </head>
   <body>
     <header class="main-header">
@@ -142,7 +142,7 @@
               <span>Nёrds disign studio</span>
               <p>191186, Санкт-Петербург,<br> ул.Б.Конюшенная, д. 19/8</p>
               <a class="tel" href="tel:88122752525">тел. +7 (812) 275-75-75</a><br>
-              <a class="btn letter-button" href="letter.html">Напишите нам</a>
+              <a class="btn letter-button" href="">Напишите нам</a>
             </div>
           </div>
         </div>
@@ -178,28 +178,26 @@
 				</div>				
 			</section>
 		</footer>
-    <section class="modal modal-login">
-      <h2>Напишите нам</h2>
-      <form class="contact-form" action="https://echo.htmlacademy.ru" method="post">
-        <div class="user-info">
-          <p class="info"> 
-            <label class="modal" for="user-name">Ваше имя:</label><br>
-            <input class="input-user-name" id="user-name" type="text" name="name" placeholder="Имя Фамилия">
-          </p>
-          <p class="info">
-            <label class="modal" for="user-email">Ваш e-mail:</label><br>
-            <input class="input-user-email" id="user-email" type="email" name="email" placeholder="email@example.com">
-          </p>
-        </div>
-        <p>
-          <label class="modal" for="letter">Текст письма:</label><br>
-          <textarea class="input-user-letter" id="letter" rows="4" cols="85" placeholder="В свободной форме"></textarea>
-        </p>
-        <button class="btn button-modal" type="submit">Отправить</button>
-      </form>
-      <button class="modal-close" type="btn">Закрыть</button>
-    </section>
-		<script src="script.js"></script>
+    <div class="modal-content">
+			<div class="modal-content-close"></div>
+			<form action="#" method="post">
+				<p class="clearfix-1">
+					<label for="name">Ваше имя:</label>
+					<label for="e-mail">Ваш e-mail:</label>
+				</p>
+				<p class="clearfix-1">
+					<input type="text" name="username" id="name" placeholder="Представьтесь, пожалуйста" required>
+					<input type="text" name="e-mail" id="e-mail" placeholder="Для отправки ответа" required>
+				</p>
+				<p>Текст письма:</p>
+				<textarea class="letter" rows="6"  placeholder="В свободной форме"></textarea>
+				<p class="clearfix-1">
+					<input class="submit" type="submit" name="send" id="send">
+					<input type="reset" name="reset" id="reset" value="Отмена">
+				</p>
+			</form>
+		</div>
+		<script src="js/script.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;signed_in=true"></script>
     <script type="text/javascript">
 function initialize() {
@@ -221,6 +219,23 @@ function initialize() {
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
-    </script>
+var openClose = document.querySelector(".write-us-btn"),
+    popup = document.querySelector(".modal-content"),
+    close = document.querySelector(".modal-content-close"),
+    form = popup.querySelector("form"),
+    username = popup.querySelector("[name='username']"),
+    email = popup.querySelector("[name='e-mail']"),
+    letter = popup.querySelector(".letter"),
+    storage = localStorage.getItem("username");
+openClose.addEventListener("click", function(e) {
+    popup.classList.contains("modal-content-show") ? (e.preventDefault(), popup.classList.remove("modal-content-show")) : (e.preventDefault(), popup.classList.remove("modal-error"), popup.classList.add("modal-content-show"), storage ? (username.value = storage, email.focus()) : username.focus())
+}), close.addEventListener("click", function(e) {
+    e.preventDefault(), popup.classList.remove("modal-content-show")
+}), window.addEventListener("keydown", function(e) {
+    27 == e.keyCode && popup.classList.contains("modal-content-show") && popup.classList.remove("modal-content-show")
+}), form.addEventListener("submit", function(e) {
+    username.value && email.value && letter.value ? (localStorage.setItem("username", username.value), popup.classList.remove("modal-content-show")) : (e.preventDefault(), popup.classList.add("modal-error"))
+});
+</script>
 	</body>
 </html>
