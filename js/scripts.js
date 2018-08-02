@@ -1,6 +1,24 @@
 
 
+		function animations() {
+			var elem = document.getElementById("my-modal");
 
+
+			elem.classList.remove('bounceInDown');
+			elem.classList.remove('animated');
+			elem.classList.remove('shake');
+			
+			
+
+			
+			elem.classList.add('animated');
+			elem.classList.add('shake');
+				
+			
+			
+
+			
+		}
 		//Map Initialization
 		function initialize() {
 	        var mapOptions = {
@@ -35,6 +53,10 @@
 	      btn.onclick = function(e) {
 	          e.preventDefault();
 	          modal.style.display = "block";
+
+	          if(modal.classList.contains('shake')){
+				 	modal.classList.replace('shake', 'bounceInDown'); 
+				}
 	      }
 
 	      // When the user clicks on <span> (x), close the modal
@@ -48,3 +70,37 @@
 	              modal.style.display = "none";
 	          }
 	      } 
+
+	      document.getElementById('btn-modal').onclick = function(e){
+	      	e.preventDefault()
+
+	      	// animations();
+
+
+	      	if(document.getElementById('user-name').value.length == 0 || 
+	      		document.getElementById('user-email').value.length == 0 || 
+	      		document.getElementById('letter').value.length == 0){
+
+		 	     var elem = document.getElementById('my-modal');
+
+
+				 
+				 if(elem.classList.contains('bounceInDown')){
+				 	elem.classList.replace('bounceInDown', 'shake'); 
+				 
+				 }else if(elem.classList.contains('shake')){
+
+					document.getElementById('my-modal').classList.remove("shake")
+				 	document.getElementById('my-modal').classList.add("shake")
+				 
+				 }
+				 
+				 // elem.classList.add('animated');
+				 // elem.classList.add('shake'); // Add .fade-in class
+
+				  
+	      	}
+	      	
+	      }
+
+	     

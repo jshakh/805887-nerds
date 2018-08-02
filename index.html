@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel=stylesheet type="text/css">
+    <link rel="stylesheet" href="css/animate.css">
   </head>
   <body>
     <header class="main-header">
@@ -169,7 +170,7 @@
       </div>
     </footer>
    
-    <section class="modal modal-login" id="my-modal">
+    <section class="modal modal-login animated bounceInDown" id="my-modal">
       <h2>Напишите нам</h2>
       <form class="contact-form" action="https://echo.htmlacademy.ru" method="post">
         <div class="user-info">
@@ -186,7 +187,7 @@
           <label class="modal" for="letter">Текст письма:</label>
           <textarea class="input-user-letter" id="letter" name="letter" rows="4" cols="85" placeholder="В свободной форме"></textarea>
         </p>
-        <button class="button button-modal" type="submit">Отправить</button>
+        <button class="button button-modal" type="submit" id="btn-modal">Отправить</button>
       </form>
       <button class="modal-close" type="button">Закрыть</button>
     </section>
