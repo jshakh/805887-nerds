@@ -1108,6 +1108,9 @@ input[type=checkbox]:disabled+label::before {
 
 .modal-show {
 	display: block;
+	animation: bounceindown .6s;
+}
+
 }
 
 .modal-error {
